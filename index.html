@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			 $.ajax({
+            url:"http://localhost:3000/item/list",
+            type:'post',
+            dataType:'json',
+            success:function(e){
+            	for(var i in e){
+            		$('body').append('<p>'+"<a href='index2.html?id="+e[i].id+"'>"+e[i].name+"</a>"+'</p>')
+            	}
+            }
+        })      
+		})
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var b=window.location.search.split("=")[1];
+			 $.ajax({
+            url:"http://localhost:3000/item/detail",
+            type:"post",
+            data:{b:b},
+            dataType:'json',
+            success:function(e){
+            		$('body').html('<p>'+e[0].detail+'</p>')
+            }
+        })      
+		})
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
